@@ -80,22 +80,22 @@ class Downloader:
     opener = urllib2.build_opener()
     headers = {}
     if ref:
-        headers['Referer'] = ref
+      headers['Referer'] = ref
     request = urllib2.Request(url, headers=headers)
     handle = urllib2.urlopen(request)
     if not path:
-        return handle.read()
+      return handle.read()
     sys.stdout.write('saving: ')
     # write result to file
     with open(path, 'wb') as out:
-        while True:
-            part = handle.read(65536)
-            if not part:
-                break
-            out.write(part)
-            sys.stdout.write('.')
-            sys.stdout.flush() 
-        sys.stdout.write('\nFinished.\n')
+      while True:
+        part = handle.read(65536)
+        if not part:
+          break
+        out.write(part)
+        sys.stdout.write('.')
+        sys.stdout.flush() 
+      sys.stdout.write('\nFinished.\n')
   
   def make_dest(self, title):
     bad_characters = [" ", "/", "\\", ":", "(", ")", "<", ">", "|", "?", "*"]
@@ -119,8 +119,7 @@ def main():
     print "No url given!"
     sys.exit(1)
     
-  url = sys.argv[1]
-  downloader = Downloader(url)
+  downloader = Downloader(sys.argv[1])
   downloader.download()
   
   
