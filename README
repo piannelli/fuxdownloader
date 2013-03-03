@@ -1,2 +1,6 @@
 just a small python script to download some p0rn
+Usage: 
+python download.py "URL"
+
+Where URL is a fux dot com video page url.
 
