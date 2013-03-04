@@ -116,7 +116,7 @@ class Downloader:
 
 def main():
   if len(sys.argv) <= 1:
-    print "No url given!"
+    sys.stdout.write("No url given!")
     sys.exit(1)
     
   downloader = Downloader(sys.argv[1])
